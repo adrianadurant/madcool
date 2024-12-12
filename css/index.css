@@ -1,0 +1,437 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+ul{
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+img , svg{
+    display: block;
+    width: 100%;
+    height: inherit;
+    }
+svg {fill: currentColor;}    
+:root {
+    --dark-red: rgb(203, 0, 0);
+    --gradient-blue: linear-gradient(to right, rgb(56, 211, 166), rgb(0, 39, 173));
+    --gradient-orange: linear-gradient(to right, #ebcf80, #d93648);
+}
+body{
+    font-family: "Montserrat", serif;
+}
+
+.preload{
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-orange);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: fadeOut 1s ease both 2.5s;
+}
+
+.preload__img{
+    width: 5%;
+    fill: white;
+
+   animation: zoomIn 1s ease both 1s;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 100%;
+    }
+    to{
+        opacity: 0%
+    }
+}
+@keyframes zoomIn {
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(3);
+    }
+}
+
+.header{
+    width: 100%;
+    background: linear-gradient(to right, rgba(0, 39, 173, 0.9), rgba(56, 211, 166, 0.9));
+    padding: 1.25rem 4rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+
+    animation: slideDown 1s ease both 3.2s;
+}
+@keyframes slideDown {
+    from{
+        transform: translatey(-100px);
+    }
+    to{
+        transform: translatey(0px);
+    }
+}
+
+.logos__span{
+    display: none;
+}
+.logos__img{
+    width: 10rem;
+    color: white;
+}
+.header__btn{
+    font-size: 2rem;
+    display: none;
+}
+.menu__ul{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.875rem;
+    font-size: .8rem;
+}
+.menu__a{
+    color: white;
+}
+.area__ul{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: end;
+    align-items: center;
+    gap: 1.875rem;
+    font-size: .8rem;
+}
+.area__ul--mobile{
+    display: none;
+}
+.area__a{
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: .125rem;
+}
+.area__svg{
+    width: 1.25rem;
+}
+.area__svg--play{
+    width: 1.5625rem;
+}
+.hero{
+    width: 100%;
+    min-height: 85vh;
+    padding: 3.125rem 0rem 0rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.hero__span{
+    display: none;
+}
+.hero__video{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+.hero__info{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3.125rem;
+    position: relative;
+}
+.hero__h2{
+    font-size: 2.375rem;
+    color: white;
+    animation: fadeIn 1s ease both 3.3s;
+}
+
+@keyframes fadeIn {
+    from{
+        transform: scale(.1);
+        opacity: 0%;
+    }
+    to{
+        transform: scale(1);
+        opacity: 100%;
+    }
+}
+
+.hero__ul{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 2.5rem;
+}
+.hero__a{
+    color: white;
+    padding: 15px 50px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.hero__a--blue{
+    background: var(--gradient-blue);
+    border: .625rem inset rgb(0, 39, 173);
+    animation: slide 1s ease both 3.3s;
+}
+.hero__a--orange{
+    background: var(--gradient-orange);
+    border: .625rem inset #d93648;
+    animation: slide 1s ease both 3.4s;
+}
+
+@keyframes slide{
+    from{
+        transform: translateY(25px);
+        opacity: 0%;
+    }
+    to{
+        transform: translateY(0px);
+        opacity: 100%;
+    }
+}
+
+.hero__svg--li{
+    width: 1.875rem;
+}
+.posters{
+    width: 100%;
+    background: linear-gradient(to left, rgba(0, 39, 173, 0.9), rgba(56, 211, 166, 0.9));
+    position: relative;
+}
+.posters__div{
+    width: 90%;
+    max-width: 75rem;
+    margin: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: end;
+    gap: 1.25rem;
+    position: relative;
+    top: -1.875rem;
+}
+.posters__image{
+    width: 50%;
+    display: block;
+}
+
+.posters__image--left{
+    animation: slideUp 1s ease both 3.5s;
+}
+.posters__image--right{
+    animation: slideUp 1s ease both 3.7s;
+}
+
+@keyframes slideUp{
+    from{
+        transform: translatey(150px);
+    }
+    to{
+        transform: translateY(0px);
+    }
+}
+
+.news{
+    width: 100%;
+    background-color: #ececec;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.news__div{
+    width: 90%;
+    max-width: 75rem;
+    background-color: var(--dark-red);
+    margin: 2.5rem 0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.75rem;
+}
+.news__h3{
+    margin-bottom: 2.1875rem;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-size: 2rem;
+}
+.news__ul{
+    width: 80%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: center;
+    gap: 1.25rem;
+}
+.news__li{
+    width: calc(50% - 1.25rem);
+}
+.news__a{
+    display: flex;
+    flex-flow: column;
+    gap: .375rem;
+}
+.news__p{
+    color: black;
+    font-weight: bold;
+    margin: .3125rem;
+}
+.news__p--date{
+    color: #d3d3d3;
+    font-weight: normal;
+}
+.news__more{
+    margin: 2.5rem;
+    padding: .9375rem 3.125rem;
+    border: .125rem solid var(--dark-red);
+    color: var(--dark-red);
+    font-weight: bold;
+}
+.footer{
+    width: 100%;
+    background-color: #d3d3d3;
+    display: flex;
+    flex-flow: column nowrap;
+}
+.footer__ul{
+    width: 75%;
+    margin: 1.25rem auto;
+    padding: 1.25rem 0rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 15px;
+}
+.footer__a{
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.footer__patrocinio{
+    width: 100%;
+    min-height: 60vh;
+    background-color: #181818;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: start;
+}
+.patrocinio__div{
+    width: 90%;
+    margin: auto;
+}
+.patrocinio__dl{
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10px;
+}.patrocinio__dt{
+    width: 100%;
+    margin: .9375rem 0rem .625rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #808080;
+}
+.patrocinio__a{
+    color: #ececec;
+    text-transform: uppercase;
+}
+@media (max-width: 800px){
+    .header{
+        justify-content: space-between;
+        padding: .45rem 2.5rem;
+    }
+    .header__nav{
+        display: none;
+    }
+    .logos{
+        display: none;
+    }
+    .header__btn{
+        display: block;
+        width: 2.5rem;
+        color: white;
+        background-color: transparent;
+    }
+    .menu {
+        display: none;
+    }
+    .area__ul{
+        display: none;
+    }
+    .area__ul--mobile{
+        display: flex;
+        gap: .9375rem;
+    }
+    .area__a{
+        flex-direction: column;
+    }
+    .hero__ul{
+        flex-flow: column nowrap;
+        gap: 1.875rem;
+    }
+    .posters__div{
+       width: 80%;
+       flex-flow: column nowrap;
+       justify-content: space-between;
+       align-items: center;
+       gap: 2.5rem;
+    }
+    .posters__image{
+        width: 100%;
+    }
+    .news__ul{
+        width: 90%;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .news__li{
+        width: 100%;
+    }
+    .news__p{
+        margin: .9375rem 0rem;
+    }
+    .footer__ul{
+        flex-flow: column nowrap;
+        align-items: center;
+    }
+    .patrocinio__div{
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        text-align: center;
+    }
+    .patrocinio__dl{
+        justify-content: center;
+    }
+}
